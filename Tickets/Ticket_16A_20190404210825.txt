@@ -1,0 +1,9 @@
+----------------------------------------
+Car Parking Ticket:
+----------------------------------------
+Car Reg: '16A'
+Arrived At: 04/04/2019 21:08:10
+Amount Paid (this transaction): £2
+Paid For (this transaction): 2 hours
+Ticket Valid Until: 04/04/2019 23:08:10
+----------------------------------------

@@ -1,0 +1,9 @@
+----------------------------------------
+Car Parking Ticket:
+----------------------------------------
+Car Reg: 'ABC'
+Arrived At: 04/04/2019 21:09:53
+Amount Paid (this transaction): £3
+Paid For (this transaction): 3 hours
+Ticket Valid Until: 05/04/2019 00:09:53
+----------------------------------------

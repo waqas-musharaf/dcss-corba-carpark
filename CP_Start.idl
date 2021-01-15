@@ -1,0 +1,71 @@
+module carPark {
+	struct vehEvt {
+		string regNum;
+		string dateTime;
+		string paidUntil;
+		string evtType;
+	};
+
+	typedef sequence<vehEvt> vehEvtLog;
+
+	interface EntryGate {
+		readonly attribute string machineName;
+		void turn_on();
+		void turn_off();
+		void reset();
+	};
+
+	interface ExitGate {
+		readonly attribute string machineName;
+		void turn_on();
+		void turn_off();
+		void reset();
+	};
+
+	interface LocalServer {
+		readonly attribute string pid;
+		readonly attribute vehEvtLog log;
+
+		void set_spaces(in long spaces);
+		long return_freeSpaces();
+		
+		void veh_in(in vehEvt evt);
+		void veh_out(in vehEvt evt);
+		void veh_pay(in vehEvt evt);
+		
+		void add_entryGate(in string gateName);
+		void add_exitGate(in string gateName);
+		void add_payStation(in string stationName);
+		
+		void rm_entryGate(in string gateName);
+		void rm_exitGate(in string gateName);
+		void rm_payStation(in string stationName);
+
+		boolean exists_entryGate(in string gateName);
+		boolean exists_exitGate(in string gateName);
+		boolean exists_payStation(in string stationName);
+
+		boolean toggle_entryGate(in string gateName, in boolean status);
+		boolean toggle_exitGate(in string gateName, in boolean status);
+		boolean toggle_payStation(in string gateName, in boolean status);
+
+		boolean veh_inCarPark(in string regNum);
+		void add_cash(in long cash);
+		long return_cashTotal();
+	};
+
+	interface PayStation {
+		readonly attribute string machineName;
+		void turn_on();
+		void turn_off();
+		void reset();
+		long return_cashTotal();
+	};
+
+	interface CompanyHQ {
+		void raise_alarm(in vehEvt evt);
+		void register_localServer(in string serverName);
+		void remove_localServer(in string serverName);
+		boolean exists_localServer(in string serverName);
+	};
+};

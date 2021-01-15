@@ -1,0 +1,20 @@
+functionality:
+
+1. toggle/reset gate/station status <- not started, important
+2. store log of paid/unpaid cars on local server <- not started, important
+3. hq alarm system <- not started, important
+4. complete hq interface <- incomplete, important
+5. create a cash log for the pay station <- incomplete, important
+6. knowledge sharing between local servers <- probably not required
+
+error handling:
+
+1. close all connected processes if a server closes <- need to do, difficult
+2. dont allow a client to run if its server is not running <- need to do, difficult
+3. error handling when arguments are in the wrong order or missing <- circumvented with sh scripts
+
+qol:
+
+1. move stuff into ORBConnection method for all classes <- minor qol change
+2. have message boxes be nicely sized and perhaps centred to main window <- minor qol change
+3. unique system.exit codes <- minor qol change
